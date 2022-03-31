@@ -1,0 +1,803 @@
+.App {
+  text-align: center;
+  overflow: hidden;
+  color: white;
+  background-color: rgb(15, 41, 158);
+}
+
+.bgweather {
+  background-image: url("./assets/bgweather.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  object-fit: contain;
+}
+
+/* ----- welcomeComp line ----- */
+
+.welcomeComp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.enterLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 0, 255, 0);
+  border: solid 1px white;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.enterLink:hover {
+  background-color: rgba(255, 255, 255, 0.205);
+}
+
+/* ----- navbar line ----- */
+
+.navbar {
+  /* display: none; */
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.1);
+  align-items: center;
+  padding: 1%;
+}
+
+.navBarTextDiv {
+  font-size: 42px;
+  inline-size: 50%;
+  font-weight: bold;
+}
+
+.csCharsDiv {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  inline-size: 25%;
+  top: 3%;
+}
+
+.csChars {
+  margin-left: 1%;
+  margin-right: 1%;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.searchForm {
+  inline-size: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 3%;
+}
+
+.searchInput {
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+  outline: none;
+}
+
+.searchBtn {
+  height: 36px;
+  width: 36px;
+
+  display: flex;
+  border-radius: 50%;
+  text-align: center;
+  justify-content: center;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(247, 0, 255, 0);
+  margin-left: 1%;
+  cursor: pointer;
+  border: solid 1px white;
+  color: white;
+}
+
+.searchBtn:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* home */
+
+.homeBoard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ----- weather Now line ----- */
+
+.weatherNowLine {
+  width: 100%;
+}
+
+.weatherNowComp {
+  display: flex;
+  direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.cityNameDiv {
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.weatherNowDetailsTableDiv {
+  display: flex;
+  align-items: center;
+}
+
+.colLCurrentTable {
+  display: flex;
+  align-items: center;
+
+  width: 111px;
+  height: 30px;
+  margin: 0%;
+  padding: 1%;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.colRCurrentTable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 31px;
+  margin: 0%;
+  padding: 1%;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.regionNcountryNlocalTimeDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.regionNcountryNlocalTime {
+  position: relative;
+  bottom: 1%;
+  font-size: 16px;
+}
+
+.tempAndConditionDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tempAndConditionIcon {
+  width: 150px;
+  height: 150px;
+}
+
+.tempAndConditionDeg {
+  position: relative;
+  bottom: 2%;
+  font-size: 36px;
+}
+
+.tempAndConditionText {
+  position: relative;
+  bottom: 5%;
+  font-size: 32px;
+}
+
+/* ----- Hourly forecast line ----- */
+
+.hourDailyLine {
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.1);
+}
+
+.hourDailyDivsLine {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.forcastDailyHourDivComp {
+  display: flex;
+  width: 100%;
+  border: solid 1px white;
+  flex-direction: column;
+  padding: 0%;
+  padding: 0.2%;
+}
+
+.degreeNtextHourDailyDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px;
+  margin: 0%;
+  padding: 0%;
+}
+
+.forcastDailyHourDetailsTableDiv {
+  display: flex;
+  height: 100px;
+  position: relative;
+  align-items: center;
+  padding: 0%;
+  margin: 0%;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.degreeNtextHourDailyTextDeg {
+  font-size: 30px;
+}
+
+.degreeNtextHourDailyTextText {
+  font-size: 24px;
+}
+
+/* ----- next days forcast line ----- */
+
+.forecastLine {
+  width: 100%;
+  padding: 0.2%;
+}
+
+.forcastDayDivsLine {
+  display: flex;
+  justify-content: space-around;
+}
+
+.forcastDayDivComp {
+  width: 32%;
+  border: solid 1px white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.forcastDayDivViewLine {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.forcastDayViewLeftInLine {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  margin: 0%;
+  padding: 0%;
+}
+
+.forcastDayViewMiddleInLine {
+  width: 33%;
+  margin: 0%;
+  padding: 0%;
+}
+
+.forcastDetailsTableDivRightInLine {
+  display: flex;
+  width: 33%;
+  align-items: center;
+  justify-content: center;
+  margin: 0%;
+  padding: 0%;
+}
+
+.dateNday {
+  text-decoration: underline;
+}
+
+.degTextInDayly {
+  font-size: 30px;
+}
+
+.conTextInDayly {
+  font-size: 22px;
+}
+
+.minmaxTextInDayly {
+  font-size: 12px;
+}
+
+.forcastDetailsTableColR {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0%;
+  padding: 1%;
+  width: 80px;
+  font-size: 18px;
+}
+
+.forcastDetailsTableColL {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0%;
+  padding: 1%;
+  width: 80px;
+  font-size: 18px;
+}
+
+.iconDaily {
+  width: 130px;
+  height: 130px;
+}
+
+/* ----- last update line ----- */
+
+.lastUpdateLine {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 0%;
+  padding: 0%;
+  flex-direction: row;
+}
+
+.colLeftLastUpdate {
+  display: flex;
+  align-items: center;
+  margin: 0%;
+  font-size: 16px;
+}
+
+.colRightLastUpdate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0%;
+  font-size: 16px;
+}
+
+@media (max-width: 501px) {
+  .App {
+    background-size: 100% 150%;
+    background-repeat: no-repeat;
+    background-size: 150% 220%;
+    object-fit: contain;
+  }
+
+  .navbar {
+    flex-direction: column;
+    width: 100%;
+    margin: 0%;
+    padding: 1%;
+    height: 10vh;
+    margin-bottom: 5%;
+  }
+
+  .navBarTextDiv {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    inline-size: 100%;
+    position: absolute;
+    top: 0%;
+  }
+
+  .csCharsDiv {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    inline-size: 34%;
+    align-self: flex-start;
+    position: absolute;
+    margin-top: 6%;
+  }
+
+  .csChars {
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .searchForm {
+    display: flex;
+    inline-size: 66%;
+    justify-content: center;
+    align-self: flex-end;
+    align-items: center;
+    position: absolute;
+    margin-top: 6%;
+  }
+
+  /* The switch - the box around the slider */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+
+  input:checked + .slider {
+    background-color: #2196f3;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  /* ----- weather Now line ----- */
+
+  .weatherNowLine {
+    width: 100%;
+  }
+
+  .weatherNowComp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 36vh;
+    margin-top: 1%;
+  }
+
+  .weatherNowDetailsTableDiv {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 28%;
+    left: 5%;
+  }
+
+  .colLCurrentTable {
+    display: flex;
+    align-items: center;
+
+    width: 111px;
+    height: 30px;
+    margin: 0%;
+    padding: 1%;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .colRCurrentTable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 31px;
+    margin: 0%;
+    padding: 1%;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .cityNameDiv {
+    font-size: 50px;
+  }
+
+  .regionNcountryNlocalTimeDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 12%;
+  }
+
+  .localTime {
+    position: relative;
+    bottom: 1%;
+    font-size: 16px;
+  }
+
+  .regionNcountry {
+    position: relative;
+    bottom: 1%;
+    font-size: 16px;
+  }
+
+  .tempAndConditionDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 27%;
+    right: 10%;
+  }
+
+  .tempAndConditionIcon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .tempAndConditionDeg {
+    position: relative;
+    bottom: 2%;
+    font-size: 24px;
+  }
+
+  .tempAndConditionText {
+    position: relative;
+    font-size: 20px;
+  }
+
+  /* ----- Hour daily forecast line ----- */
+
+  .degreeNtextHourDailyDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40px;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .iconHourlyDiv {
+    display: flex;
+    flex-direction: column;
+    height: 64px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .degreeNtextHourDailyTextDeg {
+    font-size: 22px;
+  }
+
+  .degreeNtextHourDailyTextText {
+    font-size: 18px;
+  }
+
+  .hourNdayHourlyDiv {
+    font-size: 12px;
+  }
+
+  .forcastDailyHourDetailsTableDiv {
+    display: flex;
+    height: 80px;
+    position: relative;
+    align-items: center;
+    padding: 0%;
+    margin: 0%;
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  .forcastDetailsTableColR {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0%;
+    padding: 1%;
+    width: 70px;
+  }
+
+  .forcastDetailsTableColL {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0%;
+    padding: 1%;
+    width: 70px;
+  }
+
+  /* ----- next days forcast line ----- */
+
+  .forecastLine {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .forcastDayDivsLine {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .forcastDayDivComp {
+    width: 99%;
+    border: solid 1px white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .forcastDayDivViewLine {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .forcastDayViewLeftInLine {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .forcastDayViewMiddleInLine {
+    width: 32%;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .forcastDetailsTableDivRightInLine {
+    display: flex;
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .dateNday {
+    text-decoration: underline;
+    font-size: 14px;
+  }
+
+  .iconDaily {
+    height: 70px;
+    width: 70px;
+  }
+
+  .degTextInDayly {
+    font-size: 20px;
+  }
+
+  .conTextInDayly {
+    font-size: 16px;
+  }
+
+  .minmaxTextInDayly {
+    font-size: 10px;
+  }
+}
